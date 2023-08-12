@@ -32,9 +32,9 @@ function getAvailableGroups()
 end;
 
 RIO_FOLDER_NAMES = {
-	ApokiFolder = "Apoki",
-	LechatFolder = "Lechat",
-	OvadozuFolder = "Ovadozu",
+	ApokiFolder = "HP3",
+	LechatFolder = "STARLiGHT",
+	OvadozuFolder = "Porter Robinson",
 	DefaultArcadeFolder,
 	PREDEFINED_GROUP_LIST = false;
 }

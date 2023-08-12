@@ -47,7 +47,7 @@ t[#t+1] = LoadFont("_montserrat black 30px") .. {
 
 t[#t+1] = Def.ActorFrame{
   Def.Quad{
-		InitCommand=function(self) self:Center():addy(-40):zoomto(960,600)
+		InitCommand=function(self) self:Center():addy(-40):zoomto(9600,600)
       :diffuse(color("#000000")):diffusealpha(0.8)
       :fadebottom(0.1):fadetop(0.1) end
 	};
@@ -60,21 +60,21 @@ t[#t+1] = Def.ActorFrame{
     PreviousSongMessageCommand=cmd(finishtweening;addx,-20;linear,0.2;addx,20)
   };
   LoadActor("diff") .. {
-    InitCommand=cmd(Center;zoom,0.6;addx,180;addy,180);
+    InitCommand=cmd(Center;zoom,0.8;addx,180;addy,180);
   };
   LoadActor("wheel") .. {
-    InitCommand=cmd(Center;zoom,0.6;addx,200;addy,-340);
+    InitCommand=cmd(Center;zoom,0.8;addx,260;addy,-340);
   };
   LoadActor("bpm") .. {
-    InitCommand=cmd(Center;zoom,0.6;addx,-180;addy,170);
+    InitCommand=cmd(Center;zoom,0.8;addx,-180;addy,170);
   };
   LoadActor("song") .. {
-    InitCommand=cmd(Center;zoom,0.6;addx,-220;addy,-50);
+    InitCommand=cmd(Center;zoom,0.8;addx,-280;addy,-50);
   };
 };
 
 t[#t+1] = LoadFont("_montserrat light 30px")..{
-  InitCommand=cmd(horizalign,left;x,SCREEN_CENTER_X-100;y,SCREEN_CENTER_Y+102;zoom,0.6);
+  InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+110;zoom,0.8);
   CurrentSongChangedMessageCommand=function(self)
   if GAMESTATE:GetCurrentSong() then
     local length = GAMESTATE:GetCurrentSong():MusicLengthSeconds()
@@ -375,10 +375,10 @@ t[#t+1] = Def.ActorFrame{
   LoadFont("Common large") .. {
 	InitCommand=function(self)
 		if PLAYER_1 then
-			self:x(SCREEN_RIGHT-40);
-			self:y(SCREEN_CENTER_Y+170);
+			self:x(SCREEN_CENTER_X+550);
+			self:y(SCREEN_CENTER_Y+150);
       self:horizalign(right);
-			self:zoom(0.8);
+			self:zoom(1.1);
 		end;
 	end;
 	CurrentStepsP1ChangedMessageCommand=function(self)
@@ -404,7 +404,7 @@ t[#t+1] = Def.ActorFrame{
 };
 LoadFont("_montserrat light 30px")..{
   InitCommand=cmd(diffusealpha,1;horizalign,right;
-  x,SCREEN_RIGHT-40;y,SCREEN_CENTER_Y+190;zoom,0.5);
+  x,SCREEN_CENTER_X+550;y,SCREEN_CENTER_Y+180;zoom,1);
   OnCommand=cmd(queuecommand,"Set");
   CurrentStepsP1ChangedMessageCommand=cmd(queuecommand,"Set");
   CurrentSongChangedMessageCommand=cmd(queuecommand,"Set");
@@ -434,7 +434,7 @@ end
 --BPM DISPLAY
 LoadFont("Common large")..{
 	InitCommand=cmd(diffusealpha,1;uppercase,true;horizalign,left;
-  x,SCREEN_LEFT+40;y,SCREEN_CENTER_Y+170;zoom,0.8);
+  x,SCREEN_CENTER_X-550;y,SCREEN_CENTER_Y+150;zoom,1.1);
 	CurrentSongChangedMessageCommand=function(self)
 
 		local song = GAMESTATE:GetCurrentSong();
@@ -459,7 +459,7 @@ LoadFont("Common large")..{
 };
 LoadFont("_montserrat light 30px")..{
   InitCommand=cmd(diffusealpha,1;horizalign,left;
-  x,SCREEN_LEFT+40;y,SCREEN_CENTER_Y+190;zoom,0.5);
+  x,SCREEN_CENTER_X-550;y,SCREEN_CENTER_Y+180;zoom,1);
   OnCommand=cmd(queuecommand,"Set");
   CurrentSongChangedMessageCommand=cmd(queuecommand,"Set");
   SetMessageCommand=function(self)

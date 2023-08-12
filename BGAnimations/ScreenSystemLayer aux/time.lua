@@ -27,7 +27,7 @@ return Def.ActorFrame{
         Font= "_futura 30px",
         Text="Test",
         Name="Time",
-        InitCommand=function(self) self:zoom(0.5) self:strokecolor(color("#000000")) end,
+        InitCommand=function(self) self:zoom(0.8) self:strokecolor(color("#000000")) end,
       },
       --
       BeginCommand=function(self)
@@ -39,7 +39,7 @@ return Def.ActorFrame{
       bOpen = not bOpen
       if bOpen then self:playcommand("Show") else self:playcommand("Hide") end
     end,
-    InitCommand=function(self) self:x(SCREEN_LEFT+50):y(SCREEN_TOP+14):visible(true) end,
+    InitCommand=function(self) self:x(SCREEN_LEFT+72):y(SCREEN_TOP+14):visible(true) end,
     ShowCommand=function(self) self:finishtweening():visible(true) end,
     HideCommand=function(self) self:finishtweening():visible(false) end,
   }

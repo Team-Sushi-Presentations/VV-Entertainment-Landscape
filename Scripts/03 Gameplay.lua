@@ -6,9 +6,9 @@
 -- for example, not every theme wants to worry about custom receptor positions.
 local tNotePositions = {
 	-- StepMania 3.9/4.0
-	Normal = { -260, 260, },
+	Normal = { -300, 300, },
 	-- ITG
-	Lower = { -260, 260, }
+	Lower = { -300, 300, }
 }
 
 function GetTapPosition( sType )

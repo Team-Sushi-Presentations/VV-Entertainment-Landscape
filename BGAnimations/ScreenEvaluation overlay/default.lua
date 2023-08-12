@@ -34,7 +34,7 @@ t[#t+1] = LoadFont("Common large") .. {
 
 --Song Text
 t[#t+1] = LoadFont("Common large") .. {
-  InitCommand=cmd(Center;zoom,0.7;y,SCREEN_CENTER_Y-130;maxwidth,800);
+  InitCommand=cmd(Center;zoom,1;y,SCREEN_CENTER_Y-130;maxwidth,800);
   OnCommand=function(self)
     local song = GAMESTATE:GetCurrentSong()
     if song then
@@ -45,7 +45,7 @@ t[#t+1] = LoadFont("Common large") .. {
   end;
 };
 t[#t+1] = LoadFont("_montserrat light 30px") .. {
-  InitCommand=cmd(Center;y,SCREEN_CENTER_Y-104;zoom,0.4;maxwidth,1400);
+  InitCommand=cmd(Center;y,SCREEN_CENTER_Y-104;zoom,0.7;maxwidth,1400);
   OnCommand=function(self)
     local song = GAMESTATE:GetCurrentSong()
     if song then

@@ -10,7 +10,7 @@ t[#t+1] = Def.ActorFrame{
 
 t[#t+1] = Def.ActorFrame{
   Def.Quad{
-		InitCommand=function(self) self:Center():addy(-40):zoomto(960,960)
+		InitCommand=function(self) self:Center():addy(-40):zoomto(9600,960)
       :diffuse(color("#000000")):diffusealpha(0.8)
       :fadebottom(0.1):fadetop(0.1) end
 	};

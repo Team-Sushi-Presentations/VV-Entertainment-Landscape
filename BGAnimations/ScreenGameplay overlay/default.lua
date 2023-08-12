@@ -14,27 +14,27 @@ end;
 t[#t+1] = Def.ActorFrame{
   LoadActor(NAME);
   OnCommand=function(self)
-	self:zoom(0.4);
-	self:x(SCREEN_RIGHT-40);
-	self:y(SCREEN_CENTER_Y+180);
+	self:zoom(0.5);
+	self:x(SCREEN_RIGHT-48);
+	self:y(SCREEN_CENTER_Y+50);
   end;
 };
 
 --Icons
 t[#t+1] = LoadActor("icons") .. {
 	InitCommand=function(self)
-			self:x(SCREEN_RIGHT-40);
-			self:y(SCREEN_BOTTOM-220);
-			self:zoom(0.5);
+			self:x(SCREEN_RIGHT-48);
+			self:y(SCREEN_BOTTOM-280);
+			self:zoom(0.8);
 	end;
 };
 --Score
 t[#t+1] = LoadFont("_futura 30px")..{
 	InitCommand=function(self)
 		if PLAYER_1 then
-			self:x(SCREEN_RIGHT-40);
-			self:y(SCREEN_BOTTOM-262);
-			self:zoom(0.6);
+			self:x(SCREEN_RIGHT-48);
+			self:y(SCREEN_BOTTOM-348);
+			self:zoom(0.8);
 		end;
 	end;
 	OnCommand=cmd(playcommand,"Change");
@@ -65,7 +65,7 @@ t[#t+1] = LoadFont("_futura 30px")..{
 			self:horizalign(left);
 			self:x(SCREEN_CENTER_X-116);
 			self:y(SCREEN_TOP+40);
-			self:zoom(0.6);
+			self:zoom(0.8);
 		end;
 	end;
 	OnCommand=cmd(playcommand,"Change");
@@ -91,24 +91,24 @@ t[#t+1] = LoadFont("_futura 30px")..{
 t[#t+1] = LoadFont("_futura 30px")..{
 	InitCommand=function(self)
 		if PLAYER_1 then
-			self:x(SCREEN_RIGHT-40);
-			self:y(SCREEN_BOTTOM-194);
-			self:zoom(0.5);
+			self:x(SCREEN_RIGHT-48);
+			self:y(SCREEN_BOTTOM-238);
+			self:zoom(0.8);
 		end;
 	end;
 	OnCommand=cmd(playcommand,"Change");
 	JudgmentMessageCommand=cmd(playcommand,"Change");
 	ChangeCommand=function(self)
 				self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(PLAYER_1):MaxCombo());
-				self:zoom(0.6);			
+				self:zoom(0.8);			
 	end;
 };
 --Share Button
 t[#t+1] = LoadFont("_futura 30px")..{
 	InitCommand=function(self)
-			self:x(SCREEN_RIGHT-40);
-			self:y(SCREEN_BOTTOM-120);
-			self:zoom(0.5);
+			self:x(SCREEN_RIGHT-48);
+			self:y(SCREEN_BOTTOM-128);
+			self:zoom(0.8);
 			self:settext("Share");
 	end;
 };
@@ -123,11 +123,11 @@ if not GAMESTATE:IsCourseMode() then
 			if song:HasJacket() then
 				Jacket:visible(true);
 				Jacket:Load(song:GetJacketPath());
-				Jacket:scaletoclipped(50,50);
+				Jacket:scaletoclipped(80,80);
 			elseif song:HasBanner() then
 				Jacket:visible(true);
 				Jacket:Load(song:GetBannerPath());
-				Jacket:scaletoclipped(50,50);
+				Jacket:scaletoclipped(80,80);
 			end;
 		else
 			Jacket:visible(false);
@@ -136,12 +136,12 @@ if not GAMESTATE:IsCourseMode() then
 	end;
 	t[#t+1] = Def.ActorFrame {
 		LoadActor(THEME:GetPathG("","button/badge")) .. {
-			OnCommand=cmd(zoomto,50,50);
+			OnCommand=cmd(zoomto,80,80);
 		};	
 		LoadActor(THEME:GetPathG("","button/mask")) .. {
-			OnCommand=cmd(MaskSource;zoomto,50,50);
+			OnCommand=cmd(MaskSource;zoomto,80,80);
 		};
-		OnCommand=cmd(MaskDest;thump;effectclock,"beatnooffset";x,SCREEN_RIGHT-40;y,SCREEN_BOTTOM-70;diffusealpha,1;SetUpdateFunction,JacketUpdate);
+		OnCommand=cmd(MaskDest;thump;effectclock,"beatnooffset";x,SCREEN_RIGHT-48;y,SCREEN_BOTTOM-60;diffusealpha,1;SetUpdateFunction,JacketUpdate);
 		Def.Sprite {
 			Name="Jacket";
 		};
@@ -149,12 +149,12 @@ if not GAMESTATE:IsCourseMode() then
 end;
 --Name
 t[#t+1] = LoadFont("_futura 30px") .. {
-	InitCommand=cmd(maxwidth,580;zoom,0.8);
+	InitCommand=cmd(maxwidth,580;zoom,1);
 	OnCommand=function(self)
 		if PLAYER_1 then
 			self:horizalign(left);
-			self:x(SCREEN_LEFT+14);
-			self:y(SCREEN_BOTTOM-160);
+			self:x(SCREEN_LEFT+20);
+			self:y(SCREEN_BOTTOM-200);
 		end;
 	end;
 
@@ -179,9 +179,9 @@ t[#t+1] = LoadFont("_futura 30px") .. {
 	InitCommand=function(self)
 		if PLAYER_1 then
 			self:horizalign(left);
-			self:x(SCREEN_LEFT+14);
-			self:y(SCREEN_BOTTOM-120);
-			self:zoom(0.6);
+			self:x(SCREEN_LEFT+20);
+			self:y(SCREEN_BOTTOM-160);
+			self:zoom(1);
 		end;
 	end;
 	OnCommand=function(self)
@@ -229,8 +229,8 @@ t[#t+1] = LoadFont("_futura 30px")..{
 		if PLAYER_1 then
 			self:horizalign(left);
 			self:x(SCREEN_LEFT+72);
-			self:y(SCREEN_BOTTOM-120);
-			self:zoom(0.6);
+			self:y(SCREEN_BOTTOM-140);
+			self:zoom(1);
 		end;
 	end;
 	OnCommand=function(self)
@@ -247,9 +247,9 @@ LoadFont("_futura 30px")..{
 		if PLAYER_1 then
 			self:horizalign(left);
 			self:maxwidth(800);
-			self:x(SCREEN_LEFT+44);
-			self:y(SCREEN_BOTTOM-82);
-			self:zoom(0.6);
+			self:x(SCREEN_LEFT+68);
+			self:y(SCREEN_BOTTOM-112);
+			self:zoom(1);
 		end;
 	end;
 	OnCommand=function(self)
@@ -266,9 +266,9 @@ LoadFont("_futura 30px")..{
 
 t[#t+1] = LoadActor("music") .. {
 	InitCommand=function(self)
-			self:x(SCREEN_LEFT+20);
-			self:y(SCREEN_BOTTOM-80);
-			self:zoom(0.2);
+			self:x(SCREEN_LEFT+40);
+			self:y(SCREEN_BOTTOM-110);
+			self:zoom(0.4);
 	end;
 };
 

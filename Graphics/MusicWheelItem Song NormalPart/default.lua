@@ -19,6 +19,7 @@ return Def.ActorFrame{
 						self:scaletoclipped(152,152);
 				else
 					self:Load(THEME:GetPathG("","Common fallback banner"));
+					self:scaletoclipped(152,152);
 				end;
 			end;
 			end;

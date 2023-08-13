@@ -21,6 +21,14 @@ local t = Def.ActorFrame{
 			end,
 			LoseFocusCommand=function(s) s:stopeffect():diffuse(color("#353535")) end,
 		};
+		LoadActor("lechat-white") ..{
+			InitCommand=function(s) s:diffusealpha(0):zoomx(1):xy(2,288) end,
+			OnCommand=function(s) s:zoom(0):decelerate(0.5):diffusealpha(1.0):zoom(1) end,
+			GainFocusCommand=function(s) s:smooth(0.3):diffusealpha(1):diffuseshift():effectcolor1(Color.White)
+				:effectcolor2(color("#ffc3ff")):effectperiod(2)
+			end,
+			LoseFocusCommand=function(s) s:stopeffect():diffuse(color("#353535")) end,
+		};
 	};
 };
 

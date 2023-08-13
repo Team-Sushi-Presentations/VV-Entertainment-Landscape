@@ -1,6 +1,16 @@
 local t = Def.ActorFrame {};
 local gc = Var("GameCommand");
 local max_stages = PREFSMAN:GetPreference( "SongsPerPlay" );
+
+local LANG = "";
+
+if ThemePrefs.Get("LanguagePreference") == "Korean" then
+  LANG = "korean"
+elseif ThemePrefs.Get("LanguagePreference") == "Japanese" then
+	LANG = "japanese"
+else
+  LANG = "english"
+end;
 --------------------------------------
 t[#t+1] = Def.ActorFrame {
 	InitCommand=function(s) s:xy(_screen.cx,_screen.cy+320):zoom(0.46) end,
@@ -15,7 +25,7 @@ t[#t+1] = Def.ActorFrame {
 	end;
 	LoseFocusCommand=function(s) s:smooth(0.1):zoomy(0):diffusealpha(0) end,
 	OffCommand=function(s) s:smooth(0.2):addy(300):diffusealpha(0) end,
-	LoadActor( gc:GetName()..".png" );
+	LoadActor( gc:GetName()..LANG..".png" );
 };
 
 return t;

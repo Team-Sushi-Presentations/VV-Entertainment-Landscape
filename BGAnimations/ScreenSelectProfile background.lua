@@ -1,6 +1,6 @@
 local t = Def.ActorFrame {};
 t[#t+1] = LoadActor(THEME:GetPathG("","backgrounds/gradient"))..{
-	InitCommand=cmd(zoom,0.6;Center);
+	InitCommand=cmd(zoomto,SCREEN_WIDTH,SCREEN_HEIGHT;Center);
 };
 return t
 

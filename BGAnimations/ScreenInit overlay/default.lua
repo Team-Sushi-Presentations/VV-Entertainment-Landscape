@@ -1,5 +1,16 @@
 local t = Def.ActorFrame {};
-t[#t+1] = LoadActor("disclaimer")..{
+
+local LANG = "";
+
+if ThemePrefs.Get("LanguagePreference") == "Korean" then
+  LANG = "korean"
+elseif ThemePrefs.Get("LanguagePreference") == "Japanese" then
+	LANG = "japanese"
+else
+  LANG = "english"
+end;
+
+t[#t+1] = LoadActor("disclaimer"..LANG)..{
     InitCommand=cmd(zoom,0.57;Center);
 };
 

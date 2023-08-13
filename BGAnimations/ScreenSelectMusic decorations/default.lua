@@ -93,7 +93,7 @@ t[#t+1] = Def.ActorFrame{
   };
 --Song Text
 LoadFont("Common large") .. {
-  InitCommand=cmd(Center;zoom,1;y,SCREEN_CENTER_Y-260;maxwidth,550);
+  InitCommand=cmd(Center;zoom,1;y,SCREEN_CENTER_Y-260;maxwidth,1550);
   CurrentSongChangedMessageCommand=function(self)
     local song = GAMESTATE:GetCurrentSong()
     if song then
@@ -110,7 +110,7 @@ LoadFont("Common large") .. {
   end;
 };
 LoadFont("_montserrat light 30px") .. {
-  InitCommand=cmd(Center;zoom,0.8;y,SCREEN_CENTER_Y-230;maxwidth,700);
+  InitCommand=cmd(Center;zoom,0.8;y,SCREEN_CENTER_Y-230;maxwidth,1700);
   CurrentSongChangedMessageCommand=function(self)
     local song = GAMESTATE:GetCurrentSong()
     if song then

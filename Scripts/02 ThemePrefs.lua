@@ -12,6 +12,12 @@ local Prefs =
 		Choices = { "Apoki", "Lechat", "Ovadozu" },
 		Values = { "Apoki", "Lechat", "Ovadozu" }
 	},
+	LanguagePreference =
+	{
+		Default = "English",
+		Choices = { "English", "Korean", "Japanese"},
+		Values = { "English", "Korean", "Japanese"}
+	},
 	ShowLotsaOptions =
 	{
 		Default = true,
